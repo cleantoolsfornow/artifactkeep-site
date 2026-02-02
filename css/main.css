@@ -488,7 +488,7 @@ section:nth-child(even) {
     margin: 0;
 }
 
-.quickstart-example p + p {
+.quickstart-example p+p {
     margin-top: var(--space-xs);
 }
 
@@ -620,7 +620,7 @@ section:nth-child(even) {
 .donate-card {
     background: linear-gradient(135deg, #007aff 0%, #5856d6 50%, #7c3aed 100%);
     color: white;
-    padding: var(--space-3xl);
+    padding: var(--space-xl) var(--space-2xl);
     border-radius: var(--radius-xl);
     text-align: center;
     margin-top: var(--space-2xl);
