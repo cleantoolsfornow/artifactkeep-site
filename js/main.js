@@ -70,19 +70,25 @@ function initScrollEffects() {
 function initSmoothScrolling() {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
+            // Get the CURRENT href value (may have been updated by other scripts)
             const href = this.getAttribute('href');
 
-            // Ignore empty hashes
-            if (href === '#') return;
+            // Only handle on-page anchor links (starting with # and having an ID)
+            if (!href || !href.startsWith('#') || href === '#') return;
 
-            e.preventDefault();
-
-            const target = document.querySelector(href);
-            if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
+            // Validate it's a valid selector before using
+            try {
+                const target = document.querySelector(href);
+                if (target) {
+                    e.preventDefault();
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            } catch (err) {
+                // Invalid selector - let the browser handle it normally
+                console.warn('Smooth scroll: invalid selector', href);
             }
         });
     });
