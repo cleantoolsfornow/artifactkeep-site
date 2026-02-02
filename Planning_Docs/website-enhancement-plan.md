@@ -52,30 +52,20 @@ Currently missing assets referenced in meta tags or needed for SEO:
 
 
 
-### 2.2 Improve Features Page with More Detail
->
-> Priority: Medium | Effort: Medium
-
-#### [MODIFY] [features.html](file:///Users/test/artifactkeep-site/features.html)
-
-- Add keyboard shortcuts section (from UserGuide)
-- Add bulk actions callout
-- Add import/export capabilities detail
-- Ensure all screenshots are current (v2.0.3)
-
----
-
 ### 2.3 Add Getting Started Quick Guide
 >
 > Priority: Medium | Effort: Medium
 
 #### [NEW] [getting-started.html](file:///Users/test/artifactkeep-site/getting-started.html)
 
-A simple 3-step quickstart page:
+A simple 4-step quickstart page:
 
 1. Download & Install
-2. Create Your First Prompt
-3. Import Your First Image
+2. Create Your First Image Prompt
+  - Give an example for the user to use if they want
+3. Create Your First System Prompt
+  - Give an example for the user to use if they want
+4. Import Your First Image
 
 Link from download page and features page.
 
