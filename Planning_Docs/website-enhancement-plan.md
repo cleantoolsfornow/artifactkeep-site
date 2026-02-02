@@ -50,19 +50,7 @@ Currently missing assets referenced in meta tags or needed for SEO:
 
 ## Phase 2: Content Enhancements
 
-### 2.1 Add Use Case Section to Homepage
->
-> Priority: Medium | Effort: Medium
 
-#### [MODIFY] [index.html](file:///Users/test/artifactkeep-site/index.html)
-
-Add a section showcasing real-world use cases:
-
-- **Stable Diffusion Artists**: Organize prompts, extract metadata, build a prompt library
-- **LLM Power Users**: Manage system prompts, archive conversations, track personas
-- **Model Collectors**: Index models without moving files, track what you have
-
----
 
 ### 2.2 Improve Features Page with More Detail
 >
