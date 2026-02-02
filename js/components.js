@@ -29,6 +29,7 @@ function initMobileMenu() {
     if (toggle && nav) {
         toggle.addEventListener('click', () => {
             nav.classList.toggle('active');
+            toggle.classList.toggle('active');
         });
     }
 }
