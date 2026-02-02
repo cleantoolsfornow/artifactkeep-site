@@ -27,12 +27,12 @@ body::before {
 
 /* === HERO SECTION === */
 .hero {
-    min-height: 85vh;
+    min-height: 25vh;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: var(--space-4xl) 0;
+    padding: var(--space-3xl) 0;
     position: relative;
     overflow: hidden;
 }
