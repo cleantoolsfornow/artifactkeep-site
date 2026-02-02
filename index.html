@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Local-first desktop app for managing AI prompts, images, conversations, and model libraries. Privacy-focused. Cross-platform.">
+  <meta property="og:title" content="ArtifactKeep – Organize Your AI Prompts, Images & Models">
+  <meta property="og:description"
+    content="Local-first desktop app for managing AI prompts, images, conversations, and model libraries. Privacy-focused. Cross-platform.">
+  <meta property="og:image" content="https://artifactkeep.com/assets/og-image.png">
+  <meta property="og:url" content="https://artifactkeep.com/">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <title>ArtifactKeep – Organize Your AI Prompts, Images & Models</title>
+
+  <link rel="stylesheet" href="./css/main.css">
+  <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg">
+</head>
+
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="header-container">
+      <a href="/" class="header-logo">
+        <svg class="header-logo-icon" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#007aff;stop-opacity:1" />
+              <stop offset="100%" style="stop-color:#5856d6;stop-opacity:1" />
+            </linearGradient>
+          </defs>
+          <rect x="20" y="20" width="60" height="60" rx="10" fill="url(#logoGradient)" />
+          <rect x="30" y="30" width="40" height="8" rx="2" fill="white" opacity="0.9" />
+          <rect x="30" y="46" width="30" height="8" rx="2" fill="white" opacity="0.7" />
+          <rect x="30" y="62" width="35" height="8" rx="2" fill="white" opacity="0.7" />
+        </svg>
+        <span>ArtifactKeep</span>
+      </a>
+
+      <nav class="header-nav">
+        <a href="./features.html">Features</a>
+        <a href="./download.html">Download</a>
+        <a href="./help.html">Help</a>
+        <a href="./download.html" class="btn btn-primary btn-small">Download</a>
+      </nav>
+
+      <button class="header-mobile-toggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero gradient-hero">
+    <div class="container">
+      <div class="hero-content animate-fade-in">
+        <h1 class="hero-title">Your AI Artifacts,<br><span class="text-gradient">Beautifully Organized</span></h1>
+        <p class="hero-subtitle">Local-first desktop app for managing prompts, images, conversations, and model
+          libraries. Privacy-focused. Cross-platform.</p>
+
+        <div class="hero-cta">
+          <a href="./download.html" class="btn btn-primary btn-large">Download</a>
+          <a href="./features.html" class="btn btn-secondary btn-large">Explore Features →</a>
+        </div>
+      </div>
+
+      <div class="hero-image scroll-reveal">
+        <img src="./assets/screenshots/hero-app.png" alt="ArtifactKeep app interface showing organized image prompts"
+          class="screenshot">
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Overview -->
+  <section>
+    <div class="container">
+      <h2 class="h1 text-center mb-2xl scroll-reveal">Powerful Features for AI Creators</h2>
+
+      <div class="grid grid-3 features-grid">
+        <div class="card feature-card scroll-reveal">
+          <div class="feature-icon">📁</div>
+          <h3 class="card-title">Smart Organization</h3>
+          <p class="card-description">Organize with folders, tags, favorites, and powerful search. Find exactly what you
+            need, instantly.</p>
+        </div>
+
+        <div class="card feature-card scroll-reveal">
+          <div class="feature-icon">🎨</div>
+          <h3 class="card-title">Image Metadata</h3>
+          <p class="card-description">Automatically extract prompts and parameters from ComfyUI and Automatic1111
+            generated images.</p>
+        </div>
+
+        <div class="card feature-card scroll-reveal">
+          <div class="feature-icon">🔒</div>
+          <h3 class="card-title">Privacy First</h3>
+          <p class="card-description">100% local storage. No cloud sync. No tracking. Your data stays on your machine,
+            always.</p>
+        </div>
+
+        <div class="card feature-card scroll-reveal">
+          <div class="feature-icon">💬</div>
+          <h3 class="card-title">Prompt Libraries</h3>
+          <p class="card-description">Separate collections for image generation prompts and LLM system prompts with
+            character cards.</p>
+        </div>
+
+        <div class="card feature-card scroll-reveal">
+          <div class="feature-icon">📚</div>
+          <h3 class="card-title">Model Indexing</h3>
+          <p class="card-description">Index Stable Diffusion and LLM models without copying or moving your files.</p>
+        </div>
+
+        <div class="card feature-card scroll-reveal">
+          <div class="feature-icon">💾</div>
+          <h3 class="card-title">Export Anywhere</h3>
+          <p class="card-description">Export your data to JSON, Markdown, CSV, or plain text. You own your artifacts.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Visual Strip -->
+  <section>
+    <div class="container">
+      <h2 class="h1 text-center mb-2xl scroll-reveal">See It In Action</h2>
+
+      <div class="visual-strip">
+        <img src="./assets/screenshots/image-prompts-cards.png" alt="Image prompts organized in card view"
+          class="scroll-reveal">
+        <img src="./assets/screenshots/system-prompts-profiles.png" alt="System prompts with profile images"
+          class="scroll-reveal">
+        <img src="./assets/screenshots/image-detail-metadata.png" alt="Image detail showing extracted metadata"
+          class="scroll-reveal">
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section>
+    <div class="container">
+      <div class="cta-section scroll-reveal">
+        <h2 class="h1">Ready to organize your AI workflow?</h2>
+        <p class="text-secondary mb-xl">Download ArtifactKeep today and take control of your creative assets.</p>
+        <a href="./download.html" class="btn btn-primary btn-large">Download for Free</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h4>Product</h4>
+          <div class="footer-links">
+            <a href="./features.html">Features</a>
+            <a href="./download.html">Download</a>
+            <a href="https://github.com/cleantoolsfornow/artifactkeep-releases/releases" target="_blank">Changelog</a>
+          </div>
+        </div>
+
+        <div class="footer-section">
+          <h4>Support</h4>
+          <div class="footer-links">
+            <a href="./help.html">User Guide</a>
+            <a href="./help.html#faq">FAQ</a>
+            <a href="mailto:cleantoolsfornow@gmail.com">Contact</a>
+          </div>
+        </div>
+
+        <div class="footer-section">
+          <h4>Community</h4>
+          <div class="footer-links">
+            <a href="https://ko-fi.com/cleantoolsfornow" target="_blank">Support on Ko-fi</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 ArtifactKeep. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./js/main.js"></script>
+</body>
+
+</html>

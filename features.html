@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Explore all the features of ArtifactKeep - the local-first AI artifact management tool.">
+
+    <title>Features – ArtifactKeep</title>
+
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <a href="/" class="header-logo">
+                <svg class="header-logo-icon" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#007aff;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#5856d6;stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+                    <rect x="20" y="20" width="60" height="60" rx="10" fill="url(#logoGradient)" />
+                    <rect x="30" y="30" width="40" height="8" rx="2" fill="white" opacity="0.9" />
+                    <rect x="30" y="46" width="30" height="8" rx="2" fill="white" opacity="0.7" />
+                    <rect x="30" y="62" width="35" height="8" rx="2" fill="white" opacity="0.7" />
+                </svg>
+                <span>ArtifactKeep</span>
+            </a>
+
+            <nav class="header-nav">
+                <a href="./features.html">Features</a>
+                <a href="./download.html">Download</a>
+                <a href="./help.html">Help</a>
+                <a href="./download.html" class="btn btn-primary btn-small">Download</a>
+            </nav>
+
+            <button class="header-mobile-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="gradient-hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title animate-fade-in">Features Built for<br><span class="text-gradient">AI
+                        Creators</span></h1>
+                <p class="hero-subtitle">Everything you need to organize and manage your AI workflow in one beautiful,
+                    local-first app.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Feature Details -->
+    <section>
+        <div class="container">
+            <!-- Image Prompts -->
+            <div class="feature-detail scroll-reveal">
+                <div>
+                    <h2 class="h1">Image Prompts</h2>
+                    <p class="text-secondary mb-md">Store and organize all your image generation prompts in one place.
+                        Add thumbnails, tags, model names, and organize into folders. Switch between card and list views
+                        to find what you need fast.</p>
+                    <ul class="text-secondary" style="list-style: disc; margin-left: 24px; line-height: 1.8;">
+                        <li>Card and list view modes</li>
+                        <li>Custom thumbnails for quick identification</li>
+                        <li>Tag and folder organization</li>
+                        <li>Favorite prompts for quick access</li>
+                        <li>Bulk actions for efficiency</li>
+                    </ul>
+                </div>
+                <div>
+                    <img src="./assets/screenshots/image-prompts-cards.png" alt="Image prompts in card view"
+                        class="feature-detail-image">
+                </div>
+            </div>
+
+            <!-- Metadata Extraction -->
+            <div class="feature-detail scroll-reveal">
+                <div>
+                    <h2 class="h1">Automatic Metadata Extraction</h2>
+                    <p class="text-secondary mb-md">Drop in images generated from ComfyUI or Automatic1111 and
+                        automatically extract all the metadata—prompts, models, samplers, steps, CFG scale, and more.
+                        Turn any image into a reusable prompt with one click.</p>
+                    <ul class="text-secondary" style="list-style: disc; margin-left: 24px; line-height: 1.8;">
+                        <li>Supports ComfyUI and A1111 workflows</li>
+                        <li>Extract positive and negative prompts</li>
+                        <li>Capture model names and parameters</li>
+                        <li>"Create Prompt" converts images to prompts</li>
+                        <li>Preserve your workflow history</li>
+                    </ul>
+                </div>
+                <div>
+                    <img src="./assets/screenshots/image-detail-metadata.png"
+                        alt="Image detail showing extracted metadata" class="feature-detail-image">
+                </div>
+            </div>
+
+            <!-- System Prompts -->
+            <div class="feature-detail scroll-reveal">
+                <div>
+                    <h2 class="h1">System Prompts & Character Cards</h2>
+                    <p class="text-secondary mb-md">Manage your LLM system prompts and character cards with personality.
+                        Add profile images, organize by use case, and keep your AI personas ready to go. Perfect for
+                        ChatGPT, Claude, and local LLMs.</p>
+                    <ul class="text-secondary" style="list-style: disc; margin-left: 24px; line-height: 1.8;">
+                        <li>Profile images with thumbnail generation</li>
+                        <li>Store instructions and personality traits</li>
+                        <li>Tag by model (GPT-4, Claude, Llama, etc.)</li>
+                        <li>Organize personas by category</li>
+                        <li>Quick copy to clipboard</li>
+                    </ul>
+                </div>
+                <div>
+                    <img src="./assets/screenshots/system-prompts-profiles.png" alt="System prompts with profile images"
+                        class="feature-detail-image">
+                </div>
+            </div>
+
+            <!-- Conversations -->
+            <div class="feature-detail scroll-reveal">
+                <div>
+                    <h2 class="h1">Conversation Library</h2>
+                    <p class="text-secondary mb-md">Import and archive your AI conversations. Keep a library of your
+                        chats from ChatGPT, Claude, or any LLM. Search, tag, and organize your conversation history
+                        forever.</p>
+                    <ul class="text-secondary" style="list-style: disc; margin-left: 24px; line-height: 1.8;">
+                        <li>Import JSON, TXT, and Markdown exports</li>
+                        <li>Tag and categorize conversations</li>
+                        <li>Search through conversation content</li>
+                        <li>Local backup of all your chats</li>
+                        <li>Never lose valuable AI interactions</li>
+                    </ul>
+                </div>
+                <div>
+                    <img src="./assets/screenshots/conversations-cards.png" alt="Conversations library"
+                        class="feature-detail-image">
+                </div>
+            </div>
+
+            <!-- Model Library -->
+            <div class="feature-detail scroll-reveal">
+                <div>
+                    <h2 class="h1">Model Library</h2>
+                    <p class="text-secondary mb-md">Index your Stable Diffusion checkpoints, LoRAs, VAEs, and LLM models
+                        without moving or copying files. Link folders and ArtifactKeep automatically tracks everything.
+                    </p>
+                    <ul class="text-secondary" style="list-style: disc; margin-left: 24px; line-height: 1.8;">
+                        <li>Index models in-place (no file copying)</li>
+                        <li>Support for SD checkpoints, LoRAs, VAEs</li>
+                        <li>LLM model tracking</li>
+                        <li>Automatic file size and type detection</li>
+                        <li>Quick search across all models</li>
+                    </ul>
+                </div>
+                <div>
+                    <img src="./assets/screenshots/models-library.png" alt="Model library indexing"
+                        class="feature-detail-image">
+                </div>
+            </div>
+
+            <!-- Privacy -->
+            <div class="feature-detail scroll-reveal">
+                <div>
+                    <h2 class="h1">Privacy & Local-First</h2>
+                    <p class="text-secondary mb-md">Everything stays on your machine. No cloud sync. No tracking. No
+                        external servers. Your prompts, images, and data are yours alone. Export anytime in JSON,
+                        Markdown, CSV, or TXT.</p>
+                    <ul class="text-secondary" style="list-style: disc; margin-left: 24px; line-height: 1.8;">
+                        <li>100% offline functionality</li>
+                        <li>No telemetry or analytics</li>
+                        <li>Open database format (SQLite)</li>
+                        <li>Export in multiple formats</li>
+                        <li>Move your data anytime</li>
+                    </ul>
+                </div>
+                <div>
+                    <img src="./assets/screenshots/folders-detail.png" alt="Folder organization"
+                        class="feature-detail-image">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section>
+        <div class="container">
+            <div class="cta-section scroll-reveal">
+                <h2 class="h1">Try ArtifactKeep Today</h2>
+                <p class="text-secondary mb-xl">Free, open-source, and built for creators like you.</p>
+                <a href="./download.html" class="btn btn-primary btn-large">Download Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Product</h4>
+                    <div class="footer-links">
+                        <a href="./features.html">Features</a>
+                        <a href="./download.html">Download</a>
+                        <a href="https://github.com/cleantoolsfornow/artifactkeep-releases/releases"
+                            target="_blank">Changelog</a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <div class="footer-links">
+                        <a href="./help.html">User Guide</a>
+                        <a href="./help.html#faq">FAQ</a>
+                        <a href="mailto:cleantoolsfornow@gmail.com">Contact</a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Community</h4>
+                    <div class="footer-links">
+                        <a href="https://ko-fi.com/cleantoolsfornow" target="_blank">Support on Ko-fi</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 ArtifactKeep. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./js/main.js"></script>
+</body>
+
+</html>
