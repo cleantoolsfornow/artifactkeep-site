@@ -1,40 +1,30 @@
 /**
  * Components Loader
- * Loads header and footer components into pages
+ * Injects shared header/footer partials.
  */
 
 async function loadComponent(elementId, componentPath) {
-    const element = document.getElementById(elementId);
-    if (!element) return;
+    const target = document.getElementById(elementId);
+    if (!target) return;
 
     try {
         const response = await fetch(componentPath);
-        if (!response.ok) throw new Error(`Failed to load ${componentPath}`);
-        const html = await response.text();
-        element.innerHTML = html;
-
-        // Re-initialize mobile menu toggle if header was loaded
-        if (elementId === 'header-placeholder') {
-            initMobileMenu();
+        if (!response.ok) {
+            throw new Error(`Failed to load ${componentPath}`);
         }
+
+        target.innerHTML = await response.text();
+
+        document.dispatchEvent(
+            new CustomEvent('component:loaded', {
+                detail: { id: elementId }
+            })
+        );
     } catch (error) {
-        console.error(`Error loading component: ${error.message}`);
+        console.error(`Error loading component ${componentPath}:`, error.message);
     }
 }
 
-function initMobileMenu() {
-    const toggle = document.querySelector('.header-mobile-toggle');
-    const nav = document.querySelector('.header-nav');
-
-    if (toggle && nav) {
-        toggle.addEventListener('click', () => {
-            nav.classList.toggle('active');
-            toggle.classList.toggle('active');
-        });
-    }
-}
-
-// Load components when DOM is ready
 document.addEventListener('DOMContentLoaded', () => {
     loadComponent('header-placeholder', './components/header.html');
     loadComponent('footer-placeholder', './components/footer.html');

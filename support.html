@@ -6,65 +6,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Get support for ArtifactKeep. User guide, FAQ, contact, and report bugs.">
 
-    <title>Support – ArtifactKeep</title>
+    <title>Support - ArtifactKeep</title>
 
     <link rel="stylesheet" href="./css/main.css">
     <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg">
 </head>
 
 <body>
-    <!-- Header -->
     <div id="header-placeholder"></div>
 
     <main>
-        <!-- Page Header -->
-        <section class="hero" style="padding: var(--space-xl) 0;">
+        <section class="hero hero-compact gradient-hero">
             <div class="container">
                 <div class="hero-content">
-                    <h1 class="hero-title" style="font-size: 2.75rem;">Support</h1>
-                    <p class="hero-subtitle">FAQ, contact us, and how to get help</p>
+                    <h1 class="hero-title">Support</h1>
+                    <p class="hero-subtitle">FAQ, contact channels, and the fastest way to get help.</p>
                 </div>
             </div>
         </section>
 
-        <!-- Contact / Bug / Feature Section -->
         <section id="contact">
             <div class="container">
                 <h2 class="h1 text-center mb-2xl scroll-reveal">Get in Touch</h2>
 
                 <div class="grid grid-3">
-                    <!-- Contact -->
-                    <div class="card scroll-reveal" style="text-align: center;">
-                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="url(#contactGrad)"
-                            stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
-                            style="margin: 0 auto var(--space-md);">
+                    <div class="card support-card scroll-reveal">
+                        <svg class="support-icon" viewBox="0 0 24 24" fill="none" stroke="url(#contactGrad)" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                             <defs>
                                 <linearGradient id="contactGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                                    <stop offset="0%" stop-color="#007aff" />
-                                    <stop offset="100%" stop-color="#5856d6" />
+                                    <stop offset="0%" stop-color="#0b6dff" />
+                                    <stop offset="100%" stop-color="#46a4ff" />
                                 </linearGradient>
                             </defs>
-                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
-                            </path>
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
                             <polyline points="22,6 12,13 2,6"></polyline>
                         </svg>
                         <h3 class="card-title">Contact Us</h3>
-                        <p class="card-description" style="margin-bottom: var(--space-md);">Questions? Need help? We're
-                            happy to assist.</p>
-                        <code
-                            style="display: block; padding: var(--space-sm); background: var(--color-bg); border-radius: var(--radius-md); font-size: 0.85rem; margin-bottom: var(--space-sm);">cleantoolsfornow@gmail.com</code>
+                        <p class="card-description">Questions or setup issues? We are happy to help.</p>
+                        <code class="support-email">cleantoolsfornow@gmail.com</code>
                         <button class="copy-button" data-copy="cleantoolsfornow@gmail.com">Copy Email</button>
                     </div>
 
-                    <!-- Bug Reports -->
-                    <div class="card scroll-reveal" style="text-align: center;">
-                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="url(#bugGrad)"
-                            stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
-                            style="margin: 0 auto var(--space-md);">
+                    <div class="card support-card scroll-reveal">
+                        <svg class="support-icon" viewBox="0 0 24 24" fill="none" stroke="url(#bugGrad)" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                             <defs>
                                 <linearGradient id="bugGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                                    <stop offset="0%" stop-color="#007aff" />
-                                    <stop offset="100%" stop-color="#5856d6" />
+                                    <stop offset="0%" stop-color="#0b6dff" />
+                                    <stop offset="100%" stop-color="#46a4ff" />
                                 </linearGradient>
                             </defs>
                             <circle cx="12" cy="7.5" r="2.25"></circle>
@@ -79,26 +69,21 @@
                             <line x1="15" y1="17" x2="19" y2="19"></line>
                         </svg>
                         <h3 class="card-title">Report a Bug</h3>
-                        <p class="card-description" style="margin-bottom: var(--space-md);">Found something broken? Let
-                            us know!</p>
-                        <p
-                            style="color: var(--color-text-secondary); font-size: 0.9rem; text-align: left; line-height: 1.6;">
-                            Include in your email:<br>
-                            • What you were doing<br>
-                            • What went wrong<br>
-                            • Screenshots if possible
-                        </p>
+                        <p class="card-description">Found something broken? Send details and we will dig in quickly.</p>
+                        <ul class="support-list">
+                            <li>What you were doing</li>
+                            <li>What went wrong</li>
+                            <li>Screenshots if possible</li>
+                        </ul>
                     </div>
 
-                    <!-- Feature Requests -->
-                    <div class="card scroll-reveal" style="text-align: center;">
-                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="url(#ideaGrad)"
-                            stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
-                            style="margin: 0 auto var(--space-md);">
+                    <div class="card support-card scroll-reveal">
+                        <svg class="support-icon" viewBox="0 0 24 24" fill="none" stroke="url(#ideaGrad)" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                             <defs>
                                 <linearGradient id="ideaGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                                    <stop offset="0%" stop-color="#007aff" />
-                                    <stop offset="100%" stop-color="#5856d6" />
+                                    <stop offset="0%" stop-color="#0b6dff" />
+                                    <stop offset="100%" stop-color="#46a4ff" />
                                 </linearGradient>
                             </defs>
                             <path d="M12 2.5a7.5 7.5 0 0 0-4.2 13.8V19h8.4v-2.7A7.5 7.5 0 0 0 12 2.5z"></path>
@@ -111,26 +96,19 @@
                             <line x1="16.4" y1="6.2" x2="17.8" y2="4.8"></line>
                         </svg>
                         <h3 class="card-title">Request a Feature</h3>
-                        <p class="card-description" style="margin-bottom: var(--space-md);">Have an idea? We'd love to
-                            hear it!</p>
-                        <p
-                            style="color: var(--color-text-secondary); font-size: 0.9rem; text-align: left; line-height: 1.6;">
-                            Send us ideas for:<br>
-                            • New features<br>
-                            • Improvements<br>
-                            • Integrations
-                        </p>
+                        <p class="card-description">Have an idea? We actively prioritize suggestions from users.</p>
+                        <ul class="support-list">
+                            <li>New features</li>
+                            <li>Workflow improvements</li>
+                            <li>Integration requests</li>
+                        </ul>
                     </div>
                 </div>
 
-                <p class="text-center text-secondary mt-xl scroll-reveal" style="font-size: 0.95rem;">
-                    We typically respond within 24-48 hours.
-                </p>
+                <p class="text-center text-secondary mt-xl scroll-reveal support-response">We typically respond within 24-48 hours.</p>
             </div>
         </section>
 
-
-        <!-- FAQ Section -->
         <section id="faq">
             <div class="container">
                 <div class="content-width">
@@ -138,61 +116,50 @@
 
                     <div class="card mb-lg scroll-reveal">
                         <h3 class="h3 mb-sm">Is ArtifactKeep really free?</h3>
-                        <p class="text-secondary">Yes! ArtifactKeep is completely free. There are no
-                            hidden
-                            costs, subscriptions, or premium features. If you find it useful, consider <a
-                                href="./donate.html" style="color: var(--color-accent);">supporting development</a>.</p>
+                        <p class="text-secondary">Yes. ArtifactKeep is completely free. There are no subscriptions or premium tiers.
+                            If you find it useful, consider <a href="./donate.html" class="faq-link">supporting development</a>.</p>
                     </div>
 
                     <div class="card mb-lg scroll-reveal">
                         <h3 class="h3 mb-sm">Where is my data stored?</h3>
-                        <p class="text-secondary">All your data is stored locally on your computer in JSON files.
-                            The
-                            exact location varies by OS:<br>
-                            • macOS: <code>~/Library/Application Support/com.artifactkeep.app/</code><br>
-                            • Windows: <code>%APPDATA%/com.artifactkeep.app/</code><br>
-                            • Linux: <code>~/.local/share/com.artifactkeep.app/</code></p>
+                        <p class="text-secondary">All your data is stored locally on your computer in JSON files.</p>
+                        <ul class="support-list">
+                            <li>macOS: <code>~/Library/Application Support/com.artifactkeep.app/</code></li>
+                            <li>Windows: <code>%APPDATA%/com.artifactkeep.app/</code></li>
+                            <li>Linux: <code>~/.local/share/com.artifactkeep.app/</code></li>
+                        </ul>
                     </div>
 
                     <div class="card mb-lg scroll-reveal">
                         <h3 class="h3 mb-sm">Can I sync my data across devices?</h3>
-                        <p class="text-secondary">Not currently. ArtifactKeep is designed as a local-first app with no
-                            cloud
-                            sync. However, you can manually copy your data folder to another device, or export/import
-                            your
-                            data using the export features.</p>
+                        <p class="text-secondary">Not currently. ArtifactKeep is local-first with no cloud sync. You can manually copy
+                            your data folder or use export/import workflows.</p>
                     </div>
 
                     <div class="card mb-lg scroll-reveal">
                         <h3 class="h3 mb-sm">What image formats are supported for metadata extraction?</h3>
                         <p class="text-secondary">ArtifactKeep can extract metadata from PNG and JPG images generated by
-                            ComfyUI and Automatic1111. The metadata must be embedded in the image file (standard for
-                            both
-                            tools).</p>
+                            ComfyUI and Automatic1111 when metadata is embedded in the image file.</p>
                     </div>
 
                     <div class="card mb-lg scroll-reveal">
                         <h3 class="h3 mb-sm">Does ArtifactKeep work offline?</h3>
-                        <p class="text-secondary">Yes! ArtifactKeep works 100% offline. No internet connection is
-                            required.
-                            The only time you need internet is when downloading the app initially or checking for
-                            updates.
-                        </p>
+                        <p class="text-secondary">Yes. ArtifactKeep works 100% offline. Internet is only needed for app downloads and release checks.</p>
                     </div>
 
                     <div class="card mb-lg scroll-reveal">
-                        <h3 class="h3 mb-sm">How do I backup my data?</h3>
-                        <p class="text-secondary">You can backup your data in several ways:<br>
-                            1. Copy the database folder (see "Where is my data stored?" above)<br>
-                            2. Use the Export feature to export to JSON, CSV, or Markdown<br>
-                            3. Both methods allow you to restore your data later</p>
+                        <h3 class="h3 mb-sm">How do I back up my data?</h3>
+                        <ul class="support-list">
+                            <li>Copy the database folder listed above</li>
+                            <li>Export content to JSON, CSV, or Markdown</li>
+                            <li>Either method can be used later to restore data</li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- Footer -->
     <div id="footer-placeholder"></div>
 
     <script src="./js/components.js"></script>

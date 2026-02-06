@@ -1,90 +1,161 @@
-// Main JavaScript - Handles navigation, scroll effects, and UI interactions
+// Main site interactions
 
 document.addEventListener('DOMContentLoaded', () => {
-    initMobileMenu();
     initScrollEffects();
     initSmoothScrolling();
     initCopyButtons();
+    hydrateHeader();
 });
 
-// === MOBILE MENU ===
+document.addEventListener('component:loaded', (event) => {
+    if (event.detail?.id === 'header-placeholder') {
+        hydrateHeader();
+    }
+});
+
+function hydrateHeader() {
+    initMobileMenu();
+    markActiveNavLink();
+    initHeaderScrollState();
+}
+
+// Mobile menu
 function initMobileMenu() {
     const toggle = document.querySelector('.header-mobile-toggle');
     const nav = document.querySelector('.header-nav');
 
-    if (toggle && nav) {
-        toggle.addEventListener('click', () => {
-            nav.classList.toggle('active');
-            toggle.classList.toggle('active');
-        });
+    if (!toggle || !nav || toggle.dataset.bound === 'true') return;
 
-        // Close menu when clicking a link
-        nav.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                nav.classList.remove('active');
-                toggle.classList.remove('active');
-            });
-        });
-    }
-}
-
-// === SCROLL EFFECTS ===
-function initScrollEffects() {
-    const revealElements = document.querySelectorAll('.scroll-reveal');
-
-    if (!revealElements.length) return;
-
-    const observerOptions = {
-        root: null,
-        threshold: 0.05,
-        rootMargin: '0px 0px 120px 0px'
+    const closeMenu = () => {
+        nav.classList.remove('active');
+        toggle.classList.remove('active');
     };
 
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-                observer.unobserve(entry.target);
-            }
-        });
-    }, observerOptions);
+    toggle.addEventListener('click', () => {
+        nav.classList.toggle('active');
+        toggle.classList.toggle('active');
+    });
 
-    revealElements.forEach(el => observer.observe(el));
+    nav.querySelectorAll('a').forEach((link) => {
+        link.addEventListener('click', closeMenu);
+    });
+
+    window.addEventListener('resize', () => {
+        if (window.innerWidth > 1024) {
+            closeMenu();
+        }
+    });
+
+    toggle.dataset.bound = 'true';
 }
 
-// === SMOOTH SCROLLING ===
+function markActiveNavLink() {
+    const current = normalizePath(window.location.pathname);
+
+    document.querySelectorAll('.header-nav > a:not(.btn)').forEach((link) => {
+        const href = link.getAttribute('href') || '';
+        let target = '/';
+
+        try {
+            target = normalizePath(new URL(href, window.location.href).pathname);
+        } catch (error) {
+            console.warn('Unable to resolve nav link path:', href, error);
+        }
+
+        if (target === current) {
+            link.setAttribute('aria-current', 'page');
+        } else {
+            link.removeAttribute('aria-current');
+        }
+    });
+}
+
+function normalizePath(path) {
+    const normalized = path.replace(/\/$/, '') || '/';
+
+    if (normalized.endsWith('/index.html')) {
+        return '/';
+    }
+
+    if (normalized === '' || normalized === '.') {
+        return '/';
+    }
+
+    return normalized;
+}
+
+function initHeaderScrollState() {
+    const header = document.querySelector('.header');
+    if (!header || header.dataset.scrollBound === 'true') return;
+
+    const setScrolledState = () => {
+        if (window.scrollY > 12) {
+            header.classList.add('header-scrolled');
+        } else {
+            header.classList.remove('header-scrolled');
+        }
+    };
+
+    setScrolledState();
+    window.addEventListener('scroll', setScrolledState, { passive: true });
+    header.dataset.scrollBound = 'true';
+}
+
+// Scroll reveal with staggered timing
+function initScrollEffects() {
+    const revealElements = document.querySelectorAll('.scroll-reveal');
+    if (!revealElements.length) return;
+
+    revealElements.forEach((element, index) => {
+        const delay = (index % 8) * 60;
+        element.style.setProperty('--reveal-delay', `${delay}ms`);
+    });
+
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        },
+        {
+            root: null,
+            threshold: 0.12,
+            rootMargin: '0px 0px -60px 0px'
+        }
+    );
+
+    revealElements.forEach((element) => observer.observe(element));
+}
+
 function initSmoothScrolling() {
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            // Get the CURRENT href value (may have been updated by other scripts)
+    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener('click', function (event) {
             const href = this.getAttribute('href');
+            if (!href || href === '#') return;
 
-            // Only handle on-page anchor links (starting with # and having an ID)
-            if (!href || !href.startsWith('#') || href === '#') return;
-
-            // Validate it's a valid selector before using
             try {
                 const target = document.querySelector(href);
                 if (target) {
-                    e.preventDefault();
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
+                    event.preventDefault();
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }
-            } catch (err) {
-                // Invalid selector - let the browser handle it normally
-                console.warn('Smooth scroll: invalid selector', href);
+            } catch (error) {
+                console.warn('Smooth scroll skipped for invalid selector:', href, error);
             }
         });
     });
 }
 
-// === COPY TO CLIPBOARD ===
 function initCopyButtons() {
-    document.querySelectorAll('.copy-button').forEach(button => {
+    document.querySelectorAll('.copy-button').forEach((button) => {
+        if (button.dataset.bound === 'true') return;
+
         button.addEventListener('click', async () => {
             const textToCopy = button.dataset.copy;
+            if (!textToCopy) return;
 
             try {
                 await navigator.clipboard.writeText(textToCopy);
@@ -96,23 +167,12 @@ function initCopyButtons() {
                 setTimeout(() => {
                     button.textContent = originalText;
                     button.classList.remove('copied');
-                }, 2000);
-            } catch (err) {
-                console.error('Failed to copy:', err);
+                }, 1800);
+            } catch (error) {
+                console.error('Failed to copy:', error);
             }
         });
-    });
-}
 
-// === UTILITY FUNCTIONS ===
-function debounce(func, wait) {
-    let timeout;
-    return function executedFunction(...args) {
-        const later = () => {
-            clearTimeout(timeout);
-            func(...args);
-        };
-        clearTimeout(timeout);
-        timeout = setTimeout(later, wait);
-    };
+        button.dataset.bound = 'true';
+    });
 }

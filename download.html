@@ -7,17 +7,15 @@
     <meta name="description"
         content="Download ArtifactKeep for macOS, Windows, or Linux. Local-first AI artifact management.">
 
-    <title>Download – ArtifactKeep</title>
+    <title>Download - ArtifactKeep</title>
 
     <link rel="stylesheet" href="./css/main.css">
     <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg">
 </head>
 
 <body>
-    <!-- Header -->
     <div id="header-placeholder"></div>
 
-    <!-- Page Header -->
     <section class="gradient-hero">
         <div class="container">
             <div class="hero-content">
@@ -27,15 +25,14 @@
         </div>
     </section>
 
-    <!-- Download Section -->
     <section>
         <div class="container downloads-container">
             <p class="text-center text-secondary mb-xl">Latest version: <span class="version-number">v2.0.3</span> ·
                 Released: <span class="release-date">February 1, 2026</span></p>
+
             <div class="grid grid-3">
-                <!-- macOS -->
                 <div class="card platform-card scroll-reveal">
-                    <svg class="platform-icon" viewBox="0 0 100 100" fill="currentColor">
+                    <svg class="platform-icon" viewBox="0 0 100 100" fill="currentColor" aria-hidden="true">
                         <path
                             d="M74.6 48.2c-.6-7.4 6-11 6.3-11.2-3.4-5-8.7-5.7-10.6-5.8-4.5-.5-8.8 2.7-11.1 2.7-2.3 0-5.8-2.6-9.6-2.5-4.9.1-9.5 2.9-12 7.4-5.1 8.9-1.3 22 3.7 29.2 2.5 3.5 5.4 7.5 9.2 7.3 3.7-.1 5.1-2.4 9.6-2.4 4.4 0 5.7 2.4 9.5 2.3 3.9-.1 6.5-3.6 8.9-7.1 2.8-4.1 4-8 4-8.2-.1 0-7.7-3-7.9-11.7zM63.8 25.6c2.1-2.5 3.5-6 3.1-9.6-3 .1-6.6 2-8.7 4.5-1.9 2.2-3.6 5.7-3.1 9.1 3.3.3 6.7-1.7 8.7-4z" />
                     </svg>
@@ -43,32 +40,25 @@
                     <p class="card-description text-secondary mb-lg">macOS 10.15 (Catalina) or later</p>
 
                     <div class="platform-downloads">
-                        <a id="mac-dmg" href="#" class="download-link disabled">
-                            <span>Download .dmg (Apple Silicon + Intel)</span>
-                        </a>
-                        <a id="mac-tar" href="#" class="download-link disabled">
-                            <span>Download .app.tar.gz</span>
-                        </a>
+                        <a id="mac-dmg" href="#" class="download-link disabled"><span>Download .dmg (Apple Silicon + Intel)</span></a>
+                        <a id="mac-tar" href="#" class="download-link disabled"><span>Download .app.tar.gz</span></a>
                     </div>
 
-                    <details class="mt-lg" style="cursor: pointer;">
-                        <summary style="color: var(--color-accent); font-weight: 500;">Installation Instructions
-                        </summary>
-                        <div
-                            style="margin-top: 12px; padding: 12px; background: var(--color-bg); border-radius: var(--radius-md); font-size: var(--font-size-small);">
-                            <ol style="list-style: decimal; margin-left: 20px; line-height: 1.6;">
+                    <details class="install-details">
+                        <summary class="install-summary">Installation Instructions</summary>
+                        <div class="install-panel">
+                            <ol class="install-list">
                                 <li>Download the .dmg file</li>
                                 <li>Open the .dmg and drag ArtifactKeep to Applications</li>
                                 <li>Launch from Applications folder</li>
-                                <li>If blocked by Gatekeeper: Right-click → Open</li>
+                                <li>If blocked by Gatekeeper: Right-click and choose Open</li>
                             </ol>
                         </div>
                     </details>
                 </div>
 
-                <!-- Windows -->
                 <div class="card platform-card scroll-reveal">
-                    <svg class="platform-icon" viewBox="0 0 100 100" fill="currentColor">
+                    <svg class="platform-icon" viewBox="0 0 100 100" fill="currentColor" aria-hidden="true">
                         <path
                             d="M2.2 15L43.8 9.3v39.1H2.2V15zM48 8.8L97.8 2v46.4H48V8.8zM2.2 56.4H43.8v33.4L2.2 84.1V56.4zM48 56.4h49.8V98L48 91.2V56.4z" />
                     </svg>
@@ -76,20 +66,14 @@
                     <p class="card-description text-secondary mb-lg">Windows 10 (64-bit) or later</p>
 
                     <div class="platform-downloads">
-                        <a id="windows-msi" href="#" class="download-link disabled">
-                            <span>Download .msi (Installer)</span>
-                        </a>
-                        <a id="windows-exe" href="#" class="download-link disabled">
-                            <span>Download .exe (Portable)</span>
-                        </a>
+                        <a id="windows-msi" href="#" class="download-link disabled"><span>Download .msi (Installer)</span></a>
+                        <a id="windows-exe" href="#" class="download-link disabled"><span>Download .exe (Portable)</span></a>
                     </div>
 
-                    <details class="mt-lg" style="cursor: pointer;">
-                        <summary style="color: var(--color-accent); font-weight: 500;">Installation Instructions
-                        </summary>
-                        <div
-                            style="margin-top: 12px; padding: 12px; background: var(--color-bg); border-radius: var(--radius-md); font-size: var(--font-size-small);">
-                            <ol style="list-style: decimal; margin-left: 20px; line-height: 1.6;">
+                    <details class="install-details">
+                        <summary class="install-summary">Installation Instructions</summary>
+                        <div class="install-panel">
+                            <ol class="install-list">
                                 <li>Download the .msi installer</li>
                                 <li>Double-click to run the installer</li>
                                 <li>Follow the setup wizard</li>
@@ -99,9 +83,8 @@
                     </details>
                 </div>
 
-                <!-- Linux -->
                 <div class="card platform-card scroll-reveal">
-                    <svg class="platform-icon" viewBox="0 0 100 100" fill="currentColor">
+                    <svg class="platform-icon" viewBox="0 0 100 100" fill="currentColor" aria-hidden="true">
                         <path
                             d="M50 12c-12 0-22 9-22 21 0 3 1 6 2 8-5 2-8 7-8 13 0 7 4 13 10 15v16c0 3 2 5 5 5h26c3 0 5-2 5-5V69c6-2 10-8 10-15 0-6-3-11-8-13 1-2 2-5 2-8 0-12-10-21-22-21zm-6 24c2 0 4 2 4 4s-2 4-4 4-4-2-4-4 2-4 4-4zm12 0c2 0 4 2 4 4s-2 4-4 4-4-2-4-4 2-4 4-4z" />
                     </svg>
@@ -109,46 +92,33 @@
                     <p class="card-description text-secondary mb-lg">Ubuntu 20.04+ or equivalent</p>
 
                     <div class="platform-downloads">
-                        <a id="linux-deb" href="#" class="download-link disabled">
-                            <span>Download .deb (Debian/Ubuntu)</span>
-                        </a>
-                        <a id="linux-appimage" href="#" class="download-link disabled">
-                            <span>Download .AppImage</span>
-                        </a>
-                        <a id="linux-rpm" href="#" class="download-link disabled">
-                            <span>Download .rpm (Fedora/RHEL)</span>
-                        </a>
+                        <a id="linux-deb" href="#" class="download-link disabled"><span>Download .deb (Debian/Ubuntu)</span></a>
+                        <a id="linux-appimage" href="#" class="download-link disabled"><span>Download .AppImage</span></a>
+                        <a id="linux-rpm" href="#" class="download-link disabled"><span>Download .rpm (Fedora/RHEL)</span></a>
                     </div>
 
-                    <details class="mt-lg" style="cursor: pointer;">
-                        <summary style="color: var(--color-accent); font-weight: 500;">Installation Instructions
-                        </summary>
-                        <div
-                            style="margin-top: 12px; padding: 12px; background: var(--color-bg); border-radius: var(--radius-md); font-size: var(--font-size-small);">
-                            <p style="margin-bottom: 8px;"><strong>Debian/Ubuntu (.deb):</strong></p>
-                            <pre
-                                style="background: #1d1d1f; color: #f5f5f7; padding: 8px; border-radius: 4px; overflow-x: auto;">sudo dpkg -i artifactkeep_*.deb</pre>
-                            <p style="margin: 12px 0 8px;"><strong>AppImage:</strong></p>
-                            <pre
-                                style="background: #1d1d1f; color: #f5f5f7; padding: 8px; border-radius: 4px; overflow-x: auto;">chmod +x ArtifactKeep*.AppImage
-./ArtifactKeep*.AppImage</pre>
+                    <details class="install-details">
+                        <summary class="install-summary">Installation Instructions</summary>
+                        <div class="install-panel">
+                            <p class="install-note">Debian/Ubuntu (.deb)</p>
+                            <pre class="install-code"><code>sudo dpkg -i artifactkeep_*.deb</code></pre>
+                            <p class="install-note">AppImage</p>
+                            <pre class="install-code"><code>chmod +x ArtifactKeep*.AppImage
+./ArtifactKeep*.AppImage</code></pre>
                         </div>
                     </details>
                 </div>
             </div>
 
-            <!-- Release Notes Link -->
             <div class="text-center mt-3xl scroll-reveal">
                 <p class="text-secondary">
-                    View <a href="https://github.com/cleantoolsfornow/artifactkeep-releases/releases/latest"
-                        target="_blank" style="color: var(--color-accent); text-decoration: underline;">full release
-                        notes</a> on GitHub
+                    View <a href="https://github.com/cleantoolsfornow/artifactkeep-releases/releases/latest" target="_blank"
+                        class="release-notes-link">full release notes</a> on GitHub
                 </p>
             </div>
         </div>
     </section>
 
-    <!-- Getting Started Callout -->
     <section>
         <div class="container">
             <div class="cta-section scroll-reveal">
@@ -163,26 +133,25 @@
         </div>
     </section>
 
-    <!-- System Requirements -->
     <section>
         <div class="container">
-            <div class="card scroll-reveal" style="max-width: 800px; margin: 0 auto;">
+            <div class="card scroll-reveal requirements-card">
                 <h2 class="h2 mb-lg">System Requirements</h2>
-                <div class="grid grid-2" style="gap: var(--space-xl);">
+                <div class="requirements-grid">
                     <div>
                         <h3 class="h3 mb-sm">Minimum</h3>
-                        <ul class="text-secondary" style="list-style: none; line-height: 1.8;">
-                            <li>• 2 GB RAM</li>
-                            <li>• 200 MB disk space</li>
-                            <li>• 1280x720 display</li>
+                        <ul class="requirements-list">
+                            <li>2 GB RAM</li>
+                            <li>200 MB disk space</li>
+                            <li>1280x720 display</li>
                         </ul>
                     </div>
                     <div>
                         <h3 class="h3 mb-sm">Recommended</h3>
-                        <ul class="text-secondary" style="list-style: none; line-height: 1.8;">
-                            <li>• 4 GB RAM or more</li>
-                            <li>• SSD for better performance</li>
-                            <li>• 1920x1080 display or higher</li>
+                        <ul class="requirements-list">
+                            <li>4 GB RAM or more</li>
+                            <li>SSD for better performance</li>
+                            <li>1920x1080 display or higher</li>
                         </ul>
                     </div>
                 </div>
@@ -190,7 +159,6 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <div id="footer-placeholder"></div>
 
     <script src="./js/components.js"></script>
