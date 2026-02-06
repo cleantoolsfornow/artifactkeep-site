@@ -15,28 +15,14 @@ function initMobileMenu() {
     if (toggle && nav) {
         toggle.addEventListener('click', () => {
             nav.classList.toggle('active');
-
-            // Animate hamburger icon
-            const spans = toggle.querySelectorAll('span');
-            if (nav.classList.contains('active')) {
-                spans[0].style.transform = 'rotate(45deg) translateY(8px)';
-                spans[1].style.opacity = '0';
-                spans[2].style.transform = 'rotate(-45deg) translateY(-8px)';
-            } else {
-                spans[0].style.transform = '';
-                spans[1].style.opacity = '';
-                spans[2].style.transform = '';
-            }
+            toggle.classList.toggle('active');
         });
 
         // Close menu when clicking a link
         nav.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => {
                 nav.classList.remove('active');
-                const spans = toggle.querySelectorAll('span');
-                spans[0].style.transform = '';
-                spans[1].style.opacity = '';
-                spans[2].style.transform = '';
+                toggle.classList.remove('active');
             });
         });
     }
