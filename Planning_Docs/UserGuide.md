@@ -241,7 +241,7 @@ In-app Markdown guide loaded from `assets/guide.md`.
 All data is stored locally:
 
 - **macOS**: `~/Library/Application Support/com.artifactkeep.app/`
-- **Windows**: `%APPDATA%\\com.artifactkeep.app\\`
+- **Windows**: `%APPDATA%\com.artifactkeep.app\`
 - **Linux**: `~/.local/share/com.artifactkeep.app/`
 
 ### File Structure

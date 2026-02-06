@@ -1,5 +1,7 @@
-// Prefer live guide from GitHub, keep built-in page copy as SEO/offline fallback.
+// Prefer the latest guide from GitHub, keep built-in page copy as SEO/offline fallback.
+// If GitHub is unreachable (or rate-limited), fall back to the local markdown copy.
 const GITHUB_GUIDE_URL = 'https://raw.githubusercontent.com/cleantoolsfornow/artifactkeep-releases/main/guide.md';
+const LOCAL_GUIDE_URL = './content/guide.md';
 
 document.addEventListener('DOMContentLoaded', () => {
     loadUserGuide();
@@ -13,18 +15,14 @@ async function loadUserGuide() {
     applyGuideEnhancements(guideContainer);
 
     try {
-        const response = await fetch(GITHUB_GUIDE_URL);
-        if (!response.ok) {
-            throw new Error(`GitHub fetch failed with status: ${response.status}`);
-        }
-
-        const markdown = await response.text();
+        const markdown = await fetchGuideMarkdown();
 
         // If markdown parser is unavailable, keep static fallback copy.
         if (typeof marked === 'undefined') {
+            console.warn('[Guide] Markdown parser (marked) is unavailable; keeping baked-in guide HTML.');
             showGuideStatus(
                 guideContainer,
-                'Showing built-in guide copy. Live guide parser is unavailable.'
+                'Showing built-in guide copy. The Markdown parser is unavailable.'
             );
             return;
         }
@@ -40,12 +38,13 @@ async function loadUserGuide() {
         clearGuideStatus(guideContainer);
         applyGuideEnhancements(guideContainer);
     } catch (error) {
-        console.error('[Guide] Failed to load live guide:', error);
+        console.error('[Guide] Failed to load Markdown guide:', error);
 
         if (guideContainer.textContent.trim()) {
+            console.warn('[Guide] Keeping baked-in guide HTML fallback.');
             showGuideStatus(
                 guideContainer,
-                'Showing built-in guide copy because the live GitHub guide could not be loaded.'
+                'Showing built-in guide copy because the Markdown guide could not be loaded.'
             );
             return;
         }
@@ -56,6 +55,32 @@ async function loadUserGuide() {
       </div>
     `;
     }
+}
+
+async function fetchGuideMarkdown() {
+    const sources = [GITHUB_GUIDE_URL, LOCAL_GUIDE_URL];
+
+    let lastError = null;
+
+    for (const sourceUrl of sources) {
+        try {
+            const response = await fetch(sourceUrl, { cache: 'no-store' });
+            if (!response.ok) {
+                throw new Error(`Fetch failed (${response.status}) for: ${sourceUrl}`);
+            }
+
+            const markdown = await response.text();
+            if (markdown.trim()) {
+                const label = sourceUrl === GITHUB_GUIDE_URL ? 'GitHub' : 'local';
+                console.info(`[Guide] Loaded ${label} guide: ${sourceUrl}`);
+                return markdown;
+            }
+        } catch (error) {
+            lastError = error;
+        }
+    }
+
+    throw lastError || new Error('No guide sources returned content.');
 }
 
 function applyGuideEnhancements(container) {
