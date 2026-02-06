@@ -188,10 +188,81 @@ section:nth-of-type(2n) {
 }
 
 /* Homepage */
+.page-home .hero-image {
+    max-width: 1120px;
+}
+
+.page-home .mac-window {
+    position: relative;
+    overflow: hidden;
+    border-radius: clamp(14px, 2vw, 22px);
+    border: 1px solid rgba(15, 45, 84, 0.2);
+    background: linear-gradient(180deg, #f8fbff 0%, #edf4ff 100%);
+    box-shadow:
+        0 42px 88px -42px rgba(8, 29, 63, 0.68),
+        0 24px 40px -30px rgba(8, 41, 84, 0.62);
+}
+
+.page-home .mac-window::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    border-radius: inherit;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.62);
+}
+
+.page-home .mac-window-bar {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: clamp(38px, 4.6vw, 46px);
+    padding: 0.55rem 1rem;
+    border-bottom: 1px solid rgba(18, 49, 89, 0.14);
+    background: linear-gradient(180deg, #f6f9ff 0%, #eaf1ff 100%);
+}
+
+.page-home .mac-window-controls {
+    position: absolute;
+    left: clamp(0.8rem, 2vw, 1.05rem);
+    top: 50%;
+    display: flex;
+    gap: 0.42rem;
+    transform: translateY(-50%);
+}
+
+.page-home .mac-window-dot {
+    width: clamp(10px, 1.2vw, 12px);
+    height: clamp(10px, 1.2vw, 12px);
+    border-radius: 999px;
+    border: 1px solid rgba(0, 0, 0, 0.18);
+}
+
+.page-home .mac-window-dot-close {
+    background: #ff5f57;
+}
+
+.page-home .mac-window-dot-minimize {
+    background: #ffbd2e;
+}
+
+.page-home .mac-window-dot-maximize {
+    background: #28c840;
+}
+
+.page-home .mac-window-title {
+    font-size: clamp(0.76rem, 1.6vw, 0.87rem);
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    color: rgba(19, 48, 86, 0.88);
+}
+
 .page-home .hero-image .screenshot {
     border: 0;
     border-radius: 0;
     box-shadow: none;
+    display: block;
 }
 
 .features-grid {
@@ -983,6 +1054,10 @@ section:nth-of-type(2n) {
     .hero-cta {
         flex-direction: column;
         align-items: stretch;
+    }
+
+    .page-home .mac-window {
+        border-radius: 14px;
     }
 
     .visual-strip,
